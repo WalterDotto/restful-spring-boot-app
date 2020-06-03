@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Cancel Reason</title>
+</head>
+<body>
+
+<form th:action="@{/cancel-reason/insert}" method="post" class="form form-to-validate" id="insert-cancel-reason-form"
+      th:object="${cancelReasonDto}">
+
+    <span  th:if="${#fields.hasErrors('description')}">Description no debe ser vacia</span>
+    <input type="text" th:field="*{description}"/>
+
+    <input class="button" type="submit" value="Submit" id="submit_button"/>
+
+</form>
+
+
+</body>
+</html>

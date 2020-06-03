@@ -1,0 +1,5 @@
+FROM postgres:9.6.17
+ENV POSTGRES_USER root
+ENV POSTGRES_PASSWORD secret
+ENV POSTGRES_DB springtest
+COPY init.sql /docker-entrypoint-initdb.d/

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancel reason menu</title>
+</head>
+<body>
+
+<table>
+    <td><a th:href="@{'cancel-reason/find'}">Buscar</a></td>
+    <td><a th:href="@{'cancel-reason/insert'}">Insertar</a></td>
+</table>
+
+<table>
+    <th>Orders</th>
+    <tr th:each="reason : ${cancelReasons}">
+        <td th:text="${reason.id}"></td>
+        <td th:text="${reason.description}"></td>
+        <td><a th:href="@{'cancel-reason/edit/' + ${reason.id}}">Editar</a></td>
+        <td><a th:href="@{'cancel-reason/delete/' + ${reason.id}}">Eliminar</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
