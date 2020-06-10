@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order item menu</title>
+</head>
+<body>
+
+<table>
+    <td><a th:href="@{'order-item/find'}">Buscar</a></td>
+    <td><a th:href="@{'order-item/insert'}">Insertar</a></td>
+</table>
+
+
+<h1>Order items table</h1>
+
+<table>
+    <th>Item id</th>
+    <th>Order id</th>
+    <th>Product code</th>
+    <tr th:each="item : ${orderItems}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.orderId}"></td>
+        <td th:text="${item.productCode}"></td>
+        <td><a th:href="@{'order-item/edit/' + ${item.id}}">Editar</a></td>
+        <td><a th:href="@{'order-item/delete/' + ${item.id}}">Eliminar</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

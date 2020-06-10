@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify - Step 1 - Select reason</title>
+</head>
+<body>
+
+<form th:action="@{'/order-item/edit/' + ${order_item_id}}" method="post" class="form form-to-validate"
+      id="insert-cancel-reason-form"
+      th:object="${orderItemDto}">
+
+
+    <input class="text" disabled th:value="${order_item_id}"/>
+
+    <span th:if="${#fields.hasErrors('orderId')}">Order Id no debe ser vacia</span>
+    <input type="text" th:field="*{orderId}"/>
+
+    <span th:if="${#fields.hasErrors('productCode')}">Codigo de producto no debe ser vacia</span>
+    <input type="text" th:field="*{productCode}"/>
+
+    <input class="button" type="submit" value="Submit" id="submit_button"/>
+
+</form>
+
+
+</body>
+</html>

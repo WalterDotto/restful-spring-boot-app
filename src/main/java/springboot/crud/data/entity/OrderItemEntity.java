@@ -20,7 +20,7 @@ public class OrderItemEntity {
   @Column(name = "order_item_id", insertable = false, updatable = false)
   private Integer id;
 
-  @Column(name = "order_id", insertable = false, updatable = false)
+  @Column(name = "order_id")
   private Integer orderId;
 
   @Column(name = "product_id")

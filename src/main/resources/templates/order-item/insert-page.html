@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Select reason Id</title>
+</head>
+
+<body>
+
+<form th:action="@{/order-item/find}" method="post" class="form form-to-validate" id="insert-cancel-reason-form" th:object="${orderItemDto}">
+
+    <span>Debe indicar a que Order Id desea insertar el item</span>
+    <input type="text" th:field="*{orderId}"/>
+
+    <span>Codigo de producto</span>
+    <input type="text" th:field="*{productCode}"/>
+
+    <input class="button" type="submit" value="Submit" id="submit_button"/>
+
+</form>
+
+</body>
+</html>

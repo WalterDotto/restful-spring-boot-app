@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Select reason Id</title>
+    <title>Select order item Id</title>
 </head>
 
 <body>
 
-<form th:action="@{/cancel-reason/find}" method="post" class="form form-to-validate" id="insert-cancel-reason-form">
+<form th:action="@{/order-item/find}" method="post" class="form form-to-validate" id="insert-order-item-form" th:object="${idDto}">
 
     <span>Por favor ingrese Id</span>
-    <input type="text" value="" id="reason_id" name="reason_id"/>
+    <input type="text" th:field="*{id}"/>
 
     <input class="button" type="submit" value="Submit" id="submit_button"/>
 
