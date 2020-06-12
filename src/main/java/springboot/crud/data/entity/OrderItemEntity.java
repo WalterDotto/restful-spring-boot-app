@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -17,10 +14,11 @@ import javax.persistence.Table;
 public class OrderItemEntity {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "order_item_id", insertable = false, updatable = false)
   private Integer id;
 
-  @Column(name = "order_id", insertable = false, updatable = false)
+  @Column(name = "order_id")
   private Integer orderId;
 
   @Column(name = "product_id")

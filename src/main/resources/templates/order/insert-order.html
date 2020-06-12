@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>insertar orden</title>
+</head>
+<body>
+    <form method="post" th:action="@{/order/insert}" class="form form-to-validate" th:object="${orderDto}">
+        <span  th:if="${#fields.hasErrors('cancelReason')}">la razón de cancelación no debe ser vacia</span>
+
+        <label>Ingrese la razón de cancelación de la orden</label>
+        <input type="text" th:field="*{cancelReason}">
+        <button>Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find orders page</title>
+</head>
+<body>
+    <form method="post" th:action="@{/order/find}" class="form form-to-validate" >
+        <label>Ingrese el id de orden</label>
+        <input type="text" value="" id="order_id" name="order_id">
+        <br>
+        <button>Consultar</button>
+    </form>
+
+</body>
+</html>
