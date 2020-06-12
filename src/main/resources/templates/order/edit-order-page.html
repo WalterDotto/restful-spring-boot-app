@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar orden</title>
+</head>
+<body>
+
+    <form method="post" th:action="@{'/order/edit/' + ${order_id}}" class="form form-to-validate" th:object="${orderDto}">
+        <label>Ingrese la razón de cancelación</label>
+        <span th:if="${#fields.hasErrors('cancelReason')}">El campo se encuentra vacío</span>
+        <input disabled th:value="${order_id}" type="text">
+        <input th:field="*{cancelReason}" type="number">
+        <button>Editar</button>
+    </form>
+
+</body>
+</html>

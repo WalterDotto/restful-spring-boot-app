@@ -1,12 +1,14 @@
 package springboot.crud.data.entity;
 
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "orders")
 public class OrderEntity {
 
@@ -19,12 +21,14 @@ public class OrderEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id", insertable = false, updatable = false)
     private Integer id;
 
-    @Column(name = "created_date")
+
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_date")
     private Date createdDate;
 
     @Column(name = "cancel_reason")
